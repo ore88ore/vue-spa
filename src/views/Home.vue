@@ -15,20 +15,17 @@
 
 <script lang="ts">
 import { Vue, Component } from "vue-property-decorator";
-import axios from "axios";
 
 @Component({})
 export default class Home extends Vue {
+
   getCookie() {
-    axios
-      .get("/cookies")
-      .then((response: any) => {
-        console.log("getCookie response: ", response);
-        alert("getCookie success!");
-      })
-      .catch((error: any) => {
-        console.log("getCookie error: ", error);
-      });
+    fetch(`${process.env.VUE_APP_API_URL}/cookies`, {
+      mode: "cors",
+      credentials: "include"
+    }).then(() => {
+      alert("getCookie success!!!");
+    });
   }
 }
 </script>
