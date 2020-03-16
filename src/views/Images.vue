@@ -22,7 +22,9 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component } from "vue-property-decorator";
+  /* eslint-disable @typescript-eslint/camelcase */
+
+  import { Vue, Component } from "vue-property-decorator";
 
 @Component({})
 export default class Images extends Vue {
@@ -35,6 +37,13 @@ export default class Images extends Vue {
     `${process.env.VUE_APP_IMAGE_URL}/image2.jpg`,
     `${process.env.VUE_APP_IMAGE_URL}/image3.jpg`
   ];
+
+  mounted () {
+    this.$gtag.pageview({
+      page_path: '/images',
+      page_title: "イメージ画面"
+    })
+  }
 }
 </script>
 
