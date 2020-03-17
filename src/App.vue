@@ -19,6 +19,15 @@
             <v-list-item-title>Images</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
+
+        <v-list-item link to="/analytics">
+          <v-list-item-action>
+            <v-icon>mdi-google-analytics</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>Analytics</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
       </v-list>
     </v-navigation-drawer>
 

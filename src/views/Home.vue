@@ -14,10 +14,19 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component } from "vue-property-decorator";
+  /* eslint-disable @typescript-eslint/camelcase */
+
+  import { Vue, Component } from "vue-property-decorator";
 
 @Component({})
 export default class Home extends Vue {
+
+  mounted () {
+    this.$gtag.pageview({
+      page_path: '/',
+      page_title: "ホーム画面"
+    })
+  }
 
   getCookie() {
     fetch(`${process.env.VUE_APP_API_URL}/cookies`, {
